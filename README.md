@@ -21,7 +21,7 @@
 2. Open the VSCode terminal by pressing **Ctrl-`**.
 3. **Type the following:**
    - git init
-   - git config --global user.name "github username" 
+   - git config --global user.name "github username" '   
    - git config --global user.email "your email used in github"
 4. Press **Ctrl-Shift-G** to open source control. Type **"First Commit"** on the Message text box.
 5. Click on **Commit**, then on **Synch Changes** if it appears and a prompt will display **to fork**, click on it to enable saving on your github.com account.  
