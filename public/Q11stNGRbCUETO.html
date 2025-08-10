@@ -2,22 +2,61 @@
 <html>
 
 <head>
-    <title>Lifetime Snack Supply Calculator</title>
+    <title>Welcome to the Snack Supply Calculator !!!</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', sans-serif;
+            text-align: center;
+            background-color: rgb(246, 194, 246);
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            margin: 0;
+            padding: 0;
+            color: #330033;
+        }
+
+        h1 {
+            margin-top: 50px;
+            font-size: 3em;
+            color: #ed127f;
+            text-shadow: 2px 2px #660066;
+        }
+
+        #result-box {
+            background: rgba(255, 204, 229, 0.85);
+            display: inline-block;
+            padding: 25px 35px;
+            border-radius: 15px;
+            margin-top: 30px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        #result {
+            font-size: 1.4em;
+            margin: 0;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Lifetime Snack Supply Calculator</h1>
-    <p id="result"></p>
+    <h1>🍦 Lifetime Snack Supply Calculator 🍦</h1>
+    <div id="result-box">
+        <p id="result"></p>
+    </div>
 
     <script>
         let age = 14;
         let maxAge = 100;
-        let numPerDay = 2;
+        let numPerDay = 1;
 
         let totalRequired = (numPerDay * 365) * (maxAge - age);
 
         document.getElementById("result").textContent =
-            "You will need " + totalRequired + " fried chicken to last you until the ripe old age of " + maxAge + ".";
+            "I know you love ice cream, you will need " +
+            totalRequired +
+            " cups of ice cream to last you until the ripe old age of " +
+            maxAge +
+            ".";
     </script>
 </body>
 
