@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        :root {
+            --speed: 25s;
+            --size: 100px;
+            --glow-color1: #00eaff;
+            --glow-color2: #ff00cc;
+        }
+
+        body {
+            /* New Background: Starry Night Sky */
+            background: url('https://img.freepik.com/premium-vector/blue-starry-night-cityscape-silhouette-background-vector_972395-1221.jpg?semt=ais_hybrid&w=740&q=80') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            overflow: hidden;
+            height: 100vh;
+            position: relative;
+        }
+
+        .jellyfish {
+            position: absolute;
+            width: var(--size);
+            height: auto;
+            animation: swim var(--speed) linear infinite;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .jellyfish.reverse {
+            left: 120vw;
+            animation: swim-reverse var(--speed) linear infinite;
+        }
+
+        .bell {
+            width: var(--size);
+            height: calc(var(--size) * 0.7);
+            border-radius: 50% 50% 45% 45%;
+            background: var(--glow-color1);
+            animation: breathe 3s ease-in-out infinite, colorChange 6s linear infinite;
+            box-shadow: 0 0 30px rgba(0, 234, 255, 0.8);
+            filter:
+                drop-shadow(0 0 3px var(--glow-color1)) drop-shadow(0 0 10px var(--glow-color1)) drop-shadow(0 0 20px var(--glow-color1));
+        }
+
+        .tentacles {
+            display: flex;
+            justify-content: center;
+            margin-top: 4px;
+        }
+
+        .tentacle {
+            width: 3px;
+            min-height: calc(var(--size) * 1.0);
+            background: var(--glow-color1);
+            margin: 0 1px;
+            display: inline-block;
+            animation: sway 4s ease-in-out infinite, colorChange 6s linear infinite;
+            filter:
+                drop-shadow(0 0 2px var(--glow-color1)) drop-shadow(0 0 5px var(--glow-color1));
+        }
+
+        @keyframes swim {
+            0% {
+                transform: translate(-30vw, 0) translateY(0);
+            }
+
+            25% {
+                transform: translate(20vw, 0) translateY(5vh);
+            }
+
+            50% {
+                transform: translate(60vw, 0) translateY(-5vh);
+            }
+
+            75% {
+                transform: translate(100vw, 0) translateY(5vh);
+            }
+
+            100% {
+                transform: translate(120vw, 0) translateY(0);
+            }
+        }
+
+        @keyframes swim-reverse {
+            0% {
+                transform: translate(0, 0) translateY(0);
+            }
+
+            25% {
+                transform: translate(-30vw, 0) translateY(-5vh);
+            }
+
+            50% {
+                transform: translate(-70vw, 0) translateY(5vh);
+            }
+
+            75% {
+                transform: translate(-110vw, 0) translateY(-5vh);
+            }
+
+            100% {
+                transform: translate(-150vw, 0) translateY(0);
+            }
+        }
+
+        @keyframes breathe {
+
+            0%,
+            100% {
+                transform: scaleY(1);
+            }
+
+            50% {
+                transform: scaleY(1.08);
+            }
+        }
+
+        @keyframes sway {
+            0% {
+                transform: rotate(-10deg);
+            }
+
+            50% {
+                transform: rotate(10deg);
+            }
+
+            100% {
+                transform: rotate(-10deg);
+            }
+        }
+
+        @keyframes colorChange {
+
+            0%,
+            100% {
+                background: var(--glow-color1);
+                box-shadow: 0 0 30px var(--glow-color1);
+                filter: drop-shadow(0 0 3px var(--glow-color1)) drop-shadow(0 0 10px var(--glow-color1)) drop-shadow(0 0 20px var(--glow-color1));
+            }
+
+            50% {
+                background: var(--glow-color2);
+                box-shadow: 0 0 30px var(--glow-color2);
+                filter: drop-shadow(0 0 3px var(--glow-color2)) drop-shadow(0 0 10px var(--glow-color2)) drop-shadow(0 0 20px var(--glow-color2));
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="jellyfish" style="top:35vh; left:-30vw;">
+        <div class="bell"></div>
+        <div class="tentacles">
+            <span class="tentacle" style="height: calc(var(--size) * 0.9);"></span>
+            <span class="tentacle" style="height: calc(var(--size) * 1.1);"></span>
+            <span class="tentacle" style="height: calc(var(--size) * 1.5);"></span>
+            <span class="tentacle" style="height: calc(var(--size) * 1.8);"></span>
+            <span class="tentacle" style="height: calc(var(--size) * 1.8);"></span>
+            <span class="tentacle" style="height: calc(var(--size) * 1.5);"></span>
+            <span class="tentacle" style="height: calc(var(--size) * 1.1);"></span>
+            <span class="tentacle" style="height: calc(var(--size) * 0.9);"></span>
+        </div>
+    </div>
+
+    <div class="jellyfish reverse" style="top:75vh; --speed: 20s;">
+        <div class="bell"></div>
+        <div class="tentacles">
+            <span class="tentacle" style="height: calc(var(--size) * 0.9);"></span>
+            <span class="tentacle" style="height: calc(var(--size) * 1.1);"></span>
+            <span class="tentacle" style="height: calc(var(--size) * 1.5);"></span>
+            <span class="tentacle" style="height: calc(var(--size) * 1.8);"></span>
+            <span class="tentacle" style="height: calc(var(--size) * 1.8);"></span>
+            <span class="tentacle" style="height: calc(var(--size) * 1.5);"></span>
+            <span class="tentacle" style="height: calc(var(--size) * 1.1);"></span>
+            <span class="tentacle" style="height: calc(var(--size) * 0.9);"></span>
+        </div>
+    </div>
+
+</body>
+
+</html>
